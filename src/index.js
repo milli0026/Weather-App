@@ -5,13 +5,14 @@ function displayInfo(response) {
   let descriptionElement = document.querySelector("#description");
   let windElement = document.querySelector("#wind-speed");
   let humidityElement = document.querySelector("#humidity");
-  // let iconElement = document.querySelector("#weather-icon"); //
+  let iconElement = document.querySelector("#weather-icon");
 
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = temperature;
   descriptionElement.innerHTML = response.data.condition.description;
   windElement.innerHTML = response.data.wind.speed;
   humidityElement.innerHTML = response.data.temperature.humidity;
+  iconElement.innerHTML = `<img class="current-temperature-icon" src="${response.data.condition.icon_url}"/>`;
 }
 
 function search(city) {
